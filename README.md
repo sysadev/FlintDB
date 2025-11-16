@@ -8,6 +8,7 @@ This repository holds multiple, completed versions of the engine built in differ
 
 ---
 
+
 ## 🏗️ Core Features (The Logic)
 
 This project focuses on proving two critical, complex data management principles:
@@ -17,15 +18,17 @@ This project focuses on proving two critical, complex data management principles
 
 ---
 
+
 ## 💻 Implementations
 
 | Version | Status | Language Focus | Directory |
 | :--- | :--- | :--- | :--- |
-| **Python** | **Complete** | Focuses on modern OOP structure and efficiency. | `/python` |
-| **PHP** | **Complete** | Focuses on core architectural design and data manipulation. | `/php` |
+| **Python** | **Complete** | Focuses on modern OOP structure and efficiency. | [`/python`](python) |
+| **PHP** | **Complete** | Focuses on core architectural design and data manipulation. | [`/php`](php) |
 | **Java** | Planned | Future implementation for learning enterprise patterns. | `/java` |
 
 ---
+
 
 ## 🚀 How to Run It
 
@@ -42,10 +45,11 @@ You need:
     git clone https://github.com/sysadev/FlintDB.git
     cd FlintDB
     ```
-2.  **Choose a Version:** Navigate to the `/python` or `/php` directory and follow the specific local instructions found within that folder's README.
+2.  **Choose a Version:** Navigate to the [`/python`](python) or [`/php`](php) directory and follow the specific local instructions found within that folder's README.
 
 ---
 
+
 ## 🧑‍💻 Why I Built This
 
-I built FlintDB to gain a hands-on, low-level understanding of core computer science principles like **data integrity** and **systems logic**. This experience has been invaluable for understanding complex backend architecture and expanding my multi-language development skills.
+I built **FlintDB** to gain a hands-on, low-level understanding of core computer science principles like **data integrity** and **systems logic**. This experience has been invaluable for understanding complex backend architecture and expanding my multi-language development skills.
