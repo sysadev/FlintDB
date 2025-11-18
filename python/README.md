@@ -27,9 +27,10 @@ You need Python 3.10+ installed on your system.
 
 ### Installation
 
-- Navigate to this directory:
+- Create and activate a virtual environment:
   ```bash
-  cd python
+  python -m venv .venv
+  source .venv/bin/activate
   ```
 - Install dependencies:
   ```bash
@@ -50,7 +51,7 @@ db = Database(name="dbname", storage="./data_dir")
 # Create a specific table
 db.create_table(name="users")
 
-# Access a specific table
+# Access the table
 users_table = db.table("users")
 
 # Simple row insertion
@@ -71,31 +72,66 @@ user = users_table.find_one({
 })
 
 # Find many rows
-users = users_table.find({
+active_users = users_table.find({
     "is_active": True
 })
+
+# Access single row column
+print(user["name"])
+
+# Access row columns
+print(dict(user))
+# Or
+for column, value in user:
+    print(column, "=", value)
+
+# Delete a row from table
+user.delete()
+
+# Delete table from database
+users_table.delete()
+
+# Delete entire database data
+db.delete()
 ```
 
 
+<!--
 ## Advanced Usage Example (Atomicity, Security, and Caching)
 
 This demonstrates the core security, performance, and integrity features built into the system.
 
-```bash
+```python
 from flintdb import Database
 
 # Initialize the database (kek enables TDE)
 db = Database(name="dbname", storage="./data_dir", kek="strong_secret_key")
 
 
-# --- SCHEMA ---
+# --- SCHEMA Definition ---
 
-# Create a table with schema
+# Create "customers" table with schema and encrypted column
+db.create_table(
+    "customers",
+    lambda schema:
+        (
+            schema
+            .add("name", "@text", required=True)
+            .add("email", "@text", required=True)
+            .add("password", "@text", required=True)
+            .add("address", "@text", required=True)
+            .add("phone", "@text", required=True)
+            .add("credit_card_number", "@text", required=True, encrypted=True)
+        )
+)
+
+# Create "orders" table with schema
 db.create_table(
     "orders",
     lambda schema:
         (
             schema
+            .add("order_id", "@int", required=True)
             .add("customer_id", "@text", required=True)
             .add("order_date", "@text", required=True)
             .add("status", "@enum", enum_values=["Pending", "Processing", "Shipped", "Complete", "Cancelled"], required=True)
@@ -107,36 +143,41 @@ db.create_table(
         )
 )
 
-# Access the table
-orders_table = db.table('orders')
-
+# Access the tables
+orders_table = db.table("orders")
+customers_table = db.table("customers")
 
 
 # --- Showcase Atomicity and Custom Caching ---
 
-# Transactional Update: Ensures integrity during a write operation
-orders_table.update_row('order_id', 5001, 'status', 'processing') 
-
 # Performance Check: Retrieving data is fast due to custom file cache
-cached_order = orders_table.get_row('order_id', 5001)
+order = orders_table.find_one({"order_id": 5001})
 
-print(f"Transaction handled successfully. Status: {cached_order.get('status')}")
+# Transactional Update: Ensures integrity during a write operation
+order.update({"status": "processing"})
+
+print(f"Transaction handled successfully. Status: {order.column('status')}")
 
 
-# --- QUERY ---
-query = db.query()
+# --- Advanced QUERY ---
+query = orders_table.query()
+query.where("status", "=", "processing")
+query.where("shipping_method", "!=", "N/A")
+query.sort("order_date", "DESC")
+query.limit(100)
+
+result = query.fetch()
 
 
 # --- BACKUP ---
 from flintdb import Backup
 
-# Create a backup
-Backup.dump(database=db, file="my_db_backup.zip")
+# Create a backup of database
+Backup.dump(database=db, file="./my_db_backup.zip")
 
-# Restore a backup
+# Restore a database backup
 Backup.load(file="my_db_backup.zip")
 ```
-
 
 ## Running Tests
 
@@ -145,7 +186,7 @@ To ensure data integrity, run the built-in unit tests:
 ```bash
 python -m unittest discover tests
 ```
-
+-->
 
 ## 🔗 Back to Mono-Repo
 
