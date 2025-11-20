@@ -42,6 +42,8 @@ You need PHP 8+ installed on your system.
 This shows the minimal steps required to initialize the database and insert a structured record.
 
 ```php
+<?php
+
 require 'flintdb/Autoload.php';
 
 use FlintDB\Database;
@@ -65,7 +67,7 @@ $users_table->insert([
   'password' => '$2y$12$HrMOTq0IVbCr/lRJ7TeEI.nPYEuZ/aNws1YnLHrxniVNVu5D3k4By',
   'created_at' => 1763123066,
   'is_active' => true
-});
+]);
 
 # Find single row
 $user = $users_table->find_one([
@@ -81,10 +83,10 @@ $active_users = $users_table->find([
 echo $user[ 'firstname' ];
 
 # Access row columns
-print_r( $user->columns() )
+print_r( $user->columns() );
 # Or
 foreach ( $user as $column => $value ) {
-  echo $column, '=', $value, PHP_EOL;
+  echo $column, ' = ', $value, PHP_EOL;
 }
 
 # Delete a row from table

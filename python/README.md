@@ -63,7 +63,7 @@ users_table.insert({
     "email": "john@example.com",
     "password": "$2y$12$HrMOTq0IVbCr/lRJ7TeEI.nPYEuZ/aNws1YnLHrxniVNVu5D3k4By",
     "created_at": 1763123066,
-    "is_active": true
+    "is_active": True
 })
 
 # Find single row
