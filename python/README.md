@@ -77,7 +77,7 @@ active_users = users_table.find({
 })
 
 # Access single row column
-print(user["name"])
+print(user["firstname"])
 
 # Access row columns
 print(dict(user))

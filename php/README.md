@@ -5,8 +5,8 @@
 This directory contains the complete **Object-Oriented Programming (OOP)** implementation of the FlintDB engine in PHP.
 
 This version demonstrates:
-- Adherence to PHP OOP best practices (classes, namespaces, dependency handling).
 - The successful implementation of a full Database → Table → Row → Column structured data model.
+- Adherence to PHP OOP best practices (classes, namespaces, dependency handling).
 - Efficient file I/O operations for data manipulation and storage.
 
 
@@ -78,7 +78,7 @@ $active_users = $users_table->find([
 ]);
 
 # Access single row column
-echo $user[ 'name' ];
+echo $user[ 'firstname' ];
 
 # Access row columns
 print_r( $user->columns() )
