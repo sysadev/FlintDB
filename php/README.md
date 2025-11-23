@@ -6,7 +6,7 @@ This directory contains the complete **Object-Oriented Programming (OOP)** imple
 
 This version demonstrates:
 - The successful implementation of a full Database → Table → Row → Column structured data model.
-- Adherence to PHP OOP best practices (classes, namespaces, dependency handling).
+- Adherence to PHP OOP best practices (classes, namespaces).
 - Efficient file I/O operations for data manipulation and storage.
 
 
@@ -69,33 +69,33 @@ $users_table->insert([
   'is_active' => true
 ]);
 
-# Find single row
+// Find single row
 $user = $users_table->find_one([
   'username' => 'johndoe'
 ]);
 
-# Find many rows
+// Find many rows
 $active_users = $users_table->find([
   'is_active' => true
 ]);
 
-# Access single row column
+// Access single row column
 echo $user[ 'firstname' ];
 
-# Access row columns
+// Access row columns
 print_r( $user->columns() );
-# Or
+// Or
 foreach ( $user as $column => $value ) {
   echo $column, ' = ', $value, PHP_EOL;
 }
 
-# Delete a row from table
+// Delete a row from table
 $user->delete();
 
-# Delete table from database
+// Delete table from database
 $users_table->delete();
 
-# Delete entire database data
+// Delete entire database data
 $db->delete();
 ```
 
