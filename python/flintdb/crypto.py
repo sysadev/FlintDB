@@ -62,7 +62,7 @@ class Crypto:
         from cryptography.fernet import Fernet, InvalidToken
 
         fernet = Fernet(kek)
-        value = fernet.decrypt(data.encode("utf-8"))
+        value = fernet.decrypt(cipher.encode("utf-8"))
         return json.loads(value.decode("utf-8"))
 
     @staticmethod
