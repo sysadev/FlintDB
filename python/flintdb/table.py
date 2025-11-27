@@ -189,7 +189,7 @@ class Table:
             columns["_id"] = id
 
         metadata = self.metadata()
-        file = folder / f"{id}.ndjson"
+        file = folder / f"{columns['_id']}.ndjson"
         if file.is_file():
             row = self.row(columns["_id"])
             for key, value in row.columns():
