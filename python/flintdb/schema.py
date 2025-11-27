@@ -45,7 +45,7 @@ class Schema:
             "required": bool(kwargs.get("required"))
         }
 
-        if "enum" == column_type:
+        if "@enum" == column_type:
             enum_values = kwargs.get("enum_values")
             if not isinstance(enum_values, list):
                 raise TypeError("ENUM values must be of type list")
@@ -86,7 +86,7 @@ class Schema:
             return True
         elif not data["required"] and value is None:
             return True
-        elif "enum" == data["type"] and value not in data["enum_values"]:
+        elif "@enum" == data["type"] and value not in data["enum_values"]:
             return False
 
         valid = False
