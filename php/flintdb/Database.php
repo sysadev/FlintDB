@@ -191,7 +191,7 @@ class Database {
     $metadata[ 'dek' ] = '';
     
     if ( $has_encrypted_columns ) {
-      $metadata[ 'dek' ] = Crypto::random_dek( $this->kek );
+      $metadata[ 'dek' ] = Crypto::encrypt( Crypto::random_id(), $this->kek );
     }
     
     $file = Filesystem::join( $folder, '.metadata' );
