@@ -118,11 +118,11 @@ class Schema:
     def valid_types() -> dict:
         """Returns supported columns data types."""
         return {
-            "@list": (list,),
             "@bool": (bool,),
             "@enum": (list, bool, float, int, dict, str),
             "@float": (float,),
             "@integer": (int,),
+            "@list": (list,),
             "@numeric": (str, int, float),
             "@object": (dict,),
             "@text": (str,)
