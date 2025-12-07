@@ -128,6 +128,10 @@ class Schema implements Countable {
         return true;
       }
       
+      elseif ( 'array_is_list' === $data[ 'callback' ] && ! is_array( $value ) ) {
+        return false;
+      }
+      
       return ( true === $callback( $value, ...$data[ 'args' ] ) );
     } catch ( Throwable $err ) {
       return false;
