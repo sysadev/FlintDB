@@ -73,7 +73,7 @@ class Schema implements Countable {
         }
         
         $data[ 'args' ] = array();
-        $data[ 'args' ][] = array_values( $data[ 'enum_values' ] );
+        $data[ 'args' ][] = array_values( $options[ 'enum_values' ] );
         $data[ 'args' ][] = true;
         break;
       case '@bool':
