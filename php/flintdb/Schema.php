@@ -2,7 +2,8 @@
 
 namespace FlintDB;
 
-use Countable;
+use Countable,
+    DomainException;
 
 class Schema implements Countable {
   /**
