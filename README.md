@@ -1,6 +1,6 @@
 # FlintDB
 
-## 💡 What is FlintDB?
+## What is FlintDB?
 
 FlintDB is a lightweight NoSQL database engine I built to gain a low-level understanding of data systems. It uses flat files for storage and is designed to prove that reliable, complex logic can be built with minimal overhead.
 
@@ -9,7 +9,7 @@ This repository holds multiple, completed versions of the engine built in differ
 ---
 
 
-## 🏗️ Core Features (The Logic)
+## Core Features (The Logic)
 
 This project focuses on proving two critical, complex data management principles:
 
@@ -19,7 +19,7 @@ This project focuses on proving two critical, complex data management principles
 ---
 
 
-## 💻 Implementations
+## Implementations
 
 | Version | Status | Language Focus | Directory |
 | :--- | :--- | :--- | :--- |
@@ -30,7 +30,7 @@ This project focuses on proving two critical, complex data management principles
 ---
 
 
-## 🚀 How to Run It
+## How to Run It
 
 ### Prerequisites
 
@@ -50,6 +50,6 @@ You need:
 ---
 
 
-## 🧑‍💻 Why I Built This
+## Why I Built This
 
 I built **FlintDB** to gain a hands-on, low-level understanding of core computer science principles like **data integrity** and **systems logic**. This experience has been invaluable for understanding complex backend architecture and expanding my multi-language development skills.

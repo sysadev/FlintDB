@@ -1,6 +1,6 @@
 # FlintDB Python Implementation
 
-## 🐍 Overview
+## Overview
 
 This directory contains the complete **Object-Oriented Programming (OOP)** implementation of the FlintDB engine in Python.
 
@@ -10,7 +10,7 @@ This version demonstrates:
 - Application of Python's I/O capabilities for high-performance file operations.
 
 
-## 🏗️ Core Architecture Highlights
+## Core Architecture Highlights
 
 This project was developed as a system study focusing on the implementation of:
 - **Transactional Atomicity:** Logic to prevent file corruption during write operations.
@@ -18,7 +18,7 @@ This project was developed as a system study focusing on the implementation of:
 - **Custom Caching:** Performance optimization using a built-in file-based cache.
 
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -188,6 +188,6 @@ python -m unittest discover tests
 ```
 -->
 
-## 🔗 Back to Mono-Repo
+## Back to Mono-Repo
 
 For the full architectural goals and multi-language implementations, please visit the [main README](../README.md).
