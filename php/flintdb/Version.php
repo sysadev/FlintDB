@@ -4,6 +4,6 @@ namespace FlintDB;
 
 class Version {
   
-  public const SEMVER = '0.0.1';
+  public const SEMVER = '0.0.2';
   
 }
